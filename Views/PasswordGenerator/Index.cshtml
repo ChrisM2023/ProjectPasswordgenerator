@@ -1,0 +1,38 @@
+﻿@model PasswordGeneratorViewModel
+<div>
+    <h2>
+        Password Generator
+    </h2>
+</div>
+<div>
+    <form method="post" action="~/PasswordGenerator/GeneratePassword">
+        <div class="mb-3">
+            <label for="PasswordLength" class="form-label">Password Length</label>
+            <input type="number" class="form-control" name="PasswordLength" placeholder="number of characters for password">
+        </div>
+        <div class="mb-3">
+            <label for="Uppercase" class="form-label">Uppercase</label>
+            <input asp-for="Uppercase">
+        </div>
+        <div class="mb-3">
+            <label for="Numbers" class="form-label">Numbers</label>
+            <input asp-for="Numbers">
+        </div>
+        <div class="mb-3">
+            <label for="SpecialCharacters" class="form-label">Special Characters</label>
+            <input asp-for="SpecialCharacters">
+        </div>
+        <div>
+            <button class="btn btn-primary"type="submit">
+                submit
+            </button>
+        </div>
+    </form>
+</div>
+<div class="text-center">
+    <h2>
+        <strong>
+            @Model.PasswordResult
+        </strong>
+    </h2>
+</div>
